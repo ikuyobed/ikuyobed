@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: var(--text-color);
     overflow-x: hidden;
 }
@@ -180,6 +180,44 @@ body {
     }
 }
 
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .fadeInUp {
     animation: fadeInUp 0.6s ease-out;
+}
+
+/* Floating Text Animations */
+.hero-section h1 {
+    animation: floating 3s ease-in-out infinite;
+}
+
+.hero-section .lead {
+    animation: floating 3.5s ease-in-out infinite;
+    animation-delay: 0.2s;
+}
+
+.section-title {
+    animation: floating 4s ease-in-out infinite;
+}
+
+.portfolio-item .card-title {
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* Make sure text remains readable while floating */
+.hero-section h1,
+.hero-section .lead,
+.section-title,
+.portfolio-item .card-title {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
